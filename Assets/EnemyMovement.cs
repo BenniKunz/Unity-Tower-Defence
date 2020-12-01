@@ -19,9 +19,10 @@ public class EnemyMovement : MonoBehaviour
         {
             transform.position = waypoint.transform.position;
             print($"Visiting block {waypoint.name}");
+            yield return new WaitForSeconds(1f);
         }
         print("Ending patrol");
-        yield return new WaitForSeconds(1f);
+        
     }
 
     // Update is called once per frame
