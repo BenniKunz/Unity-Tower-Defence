@@ -9,8 +9,6 @@ public class CubeEditor : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    
-
     TextMesh textMesh;
     Vector3 snapPos;
     Waypoint waypoint;
@@ -30,6 +28,7 @@ public class CubeEditor : MonoBehaviour
 
     private void SnapToGrid()
     {
+        int gridSize = waypoint.GetGridSize();
         snapPos.x = Mathf.RoundToInt(transform.position.x / gridSize) * gridSize;
         snapPos.z = Mathf.RoundToInt(transform.position.z / gridSize) * gridSize;
         transform.position = new Vector3(snapPos.x, 0f, snapPos.z);
@@ -37,6 +36,7 @@ public class CubeEditor : MonoBehaviour
 
     private void UpdateLabel()
     {
+        int gridSize = waypoint.GetGridSize();
         textMesh = GetComponentInChildren<TextMesh>();
         string labelText = snapPos.x / gridSize + "," + snapPos.z / gridSize;
         textMesh.text = labelText;
