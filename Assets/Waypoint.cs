@@ -5,7 +5,7 @@ using UnityEngine;
 public class Waypoint : MonoBehaviour
 {
     const int gridSize = 10;
-
+    public bool isExplored = false;
    
 
     // Start is called before the first frame update
