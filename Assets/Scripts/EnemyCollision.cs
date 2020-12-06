@@ -6,8 +6,8 @@ using UnityEngine;
 public class EnemyCollision : MonoBehaviour
 {
 
-    [SerializeField] int scorePerHit = 1;
-    [SerializeField] int hits = 50;
+    [SerializeField] GameObject deathFX;
+    [SerializeField] int hits = 100;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,22 @@ public class EnemyCollision : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
+        ProcessHits();
+        if (hits < 1)
+        {
+            StartDeathSequence();
+        }
+    }
+
+    private void ProcessHits()
+    {
         hits--;
+    }
+
+    private void StartDeathSequence()
+    {
+        GameObject fx = Instantiate(deathFX, transform.position, Quaternion.identity);
+        Destroy(this.gameObject);
     }
 
     // Update is called once per frame
