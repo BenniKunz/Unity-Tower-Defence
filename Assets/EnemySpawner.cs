@@ -7,6 +7,7 @@ public class EnemySpawner : MonoBehaviour
 {
     // Start is called before the first frame update
 
+    [Range(1f,10f)]
     [SerializeField] float secondsBetweenSpawns = 5f;
     public EnemyCollision enemyPrefab;
 
@@ -24,10 +25,9 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int i = 0; i < 10; i++)
         {
-            EnemyCollision spawn = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+            Instantiate(enemyPrefab, transform.position, Quaternion.identity);
             yield return new WaitForSeconds(secondsBetweenSpawns);
 
         }
-
     }
 }

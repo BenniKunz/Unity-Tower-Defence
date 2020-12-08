@@ -1066,7 +1066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e6a97a0dc6004644a4d293a154c4940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsBetweenSpawns: 5
+  secondsBetweenSpawns: 2
   enemyPrefab: {fileID: 931377036, guid: c21005d92e82f434382e5d4b515161fa, type: 3}
 --- !u!1001 &535943990
 PrefabInstance:
@@ -2084,11 +2084,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &977499300 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 543450653407715311, guid: c21005d92e82f434382e5d4b515161fa, type: 3}
-  m_PrefabInstance: {fileID: 1590928895}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &987426098
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2099,7 +2094,7 @@ PrefabInstance:
     - target: {fileID: 4845720980671077792, guid: b17ddd4655803eb4ea46b3b3bf2c5b23, type: 3}
       propertyPath: targetEnemy
       value: 
-      objectReference: {fileID: 977499300}
+      objectReference: {fileID: 0}
     - target: {fileID: 4845720980671077793, guid: b17ddd4655803eb4ea46b3b3bf2c5b23, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -3395,7 +3390,7 @@ PrefabInstance:
     - target: {fileID: 4845720980671077792, guid: b17ddd4655803eb4ea46b3b3bf2c5b23, type: 3}
       propertyPath: targetEnemy
       value: 
-      objectReference: {fileID: 977499300}
+      objectReference: {fileID: 0}
     - target: {fileID: 4845720980671077793, guid: b17ddd4655803eb4ea46b3b3bf2c5b23, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -4620,7 +4615,7 @@ PrefabInstance:
     - target: {fileID: 4845720980671077792, guid: b17ddd4655803eb4ea46b3b3bf2c5b23, type: 3}
       propertyPath: targetEnemy
       value: 
-      objectReference: {fileID: 977499300}
+      objectReference: {fileID: 0}
     - target: {fileID: 4845720980671077793, guid: b17ddd4655803eb4ea46b3b3bf2c5b23, type: 3}
       propertyPath: m_RootOrder
       value: 0
