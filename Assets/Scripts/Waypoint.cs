@@ -8,20 +8,20 @@ public class Waypoint : MonoBehaviour
     public bool isExplored = false;
     public Waypoint exploredFrom;
     public bool isPlaceable = true;
-    
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public Vector2Int CalcGridPos()
@@ -45,9 +45,17 @@ public class Waypoint : MonoBehaviour
     void OnMouseOver()
     {
         //If your mouse hovers over the GameObject with the script attached, output this message
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log($"{gameObject.name} clicked");
+            if (isPlaceable == true)
+            {
+
+                Debug.Log($"{gameObject.name} is placeable");
+            }
+            else
+            {
+                Debug.Log($"{gameObject.name} is NOT placeable");
+            }
         }
     }
 
