@@ -11,7 +11,6 @@ public class Pathfinder : MonoBehaviour
     Queue<Waypoint> queue = new Queue<Waypoint>();
 
     bool isRunning = true;
-    bool pathIsCalculated = false;
     Waypoint searchCenter;
     List<Waypoint> path = new List<Waypoint>();
 
@@ -21,25 +20,19 @@ public class Pathfinder : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     public List<Waypoint> GetPath()
     {
-        if(pathIsCalculated == false)
+        if (path.Count == 0)
         {
             LoadBlocks();
             ColorStartEnd();
             BreadthFirstSearch();
             CreatePath();
-            pathIsCalculated = true;
-            return path;
         }
-        else
-        {
-            return path;
-        }
-        
+        return path;
     }
 
     private void CreatePath()
@@ -47,7 +40,7 @@ public class Pathfinder : MonoBehaviour
         path.Add(endWaypoint);
         Waypoint previous = endWaypoint.exploredFrom;
 
-        while(previous != startWaypoint)
+        while (previous != startWaypoint)
         {
             path.Add(previous);
             previous = previous.exploredFrom;
