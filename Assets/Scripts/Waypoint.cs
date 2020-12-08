@@ -7,7 +7,8 @@ public class Waypoint : MonoBehaviour
     const int gridSize = 10;
     public bool isExplored = false;
     public Waypoint exploredFrom;
-   
+    //public static bool queriesHitTriggers = true;
+
 
     // Start is called before the first frame update
     void Start()
@@ -40,4 +41,16 @@ public class Waypoint : MonoBehaviour
         MeshRenderer topMeshRenderer = transform.Find("Top").GetComponent<MeshRenderer>();
         topMeshRenderer.material.color = color;
     }
+    void OnMouseOver()
+    {
+        //If your mouse hovers over the GameObject with the script attached, output this message
+        Debug.Log($"Mouse is over GameObject.{gameObject.name}");
+    }
+
+    void OnMouseExit()
+    {
+        //The mouse is no longer hovering over the GameObject so output this message each frame
+        Debug.Log("Mouse is no longer on GameObject.");
+    }
+
 }
