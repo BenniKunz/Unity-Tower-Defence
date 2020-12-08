@@ -28,7 +28,7 @@ public class Pathfinder : MonoBehaviour
         if (path.Count == 0)
         {
             LoadBlocks();
-            ColorStartEnd();
+            //ColorStartEnd();
             BreadthFirstSearch();
             CreatePath();
         }
@@ -99,11 +99,11 @@ public class Pathfinder : MonoBehaviour
         }
     }
 
-    private void ColorStartEnd()
-    {
-        startWaypoint.SetTopColor(Color.green);
-        endWaypoint.SetTopColor(Color.black);
-    }
+    //private void ColorStartEnd()
+    //{
+    //    startWaypoint.SetTopColor(Color.green);
+    //    endWaypoint.SetTopColor(Color.black);
+    //}
 
     private void LoadBlocks()
     {

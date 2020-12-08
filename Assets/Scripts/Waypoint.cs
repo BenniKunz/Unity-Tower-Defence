@@ -7,7 +7,8 @@ public class Waypoint : MonoBehaviour
     const int gridSize = 10;
     public bool isExplored = false;
     public Waypoint exploredFrom;
-    //public static bool queriesHitTriggers = true;
+    public bool isPlaceable = true;
+    
 
 
     // Start is called before the first frame update
@@ -36,15 +37,18 @@ public class Waypoint : MonoBehaviour
         return gridSize;
     }
 
-    public void SetTopColor(Color color)
-    {
-        MeshRenderer topMeshRenderer = transform.Find("Top").GetComponent<MeshRenderer>();
-        topMeshRenderer.material.color = color;
-    }
+    //public void SetTopColor(Color color)
+    //{
+    //    MeshRenderer topMeshRenderer = transform.Find("Top").GetComponent<MeshRenderer>();
+    //    topMeshRenderer.material.color = color;
+    //}
     void OnMouseOver()
     {
         //If your mouse hovers over the GameObject with the script attached, output this message
-        Debug.Log($"Mouse is over GameObject.{gameObject.name}");
+        if(Input.GetMouseButtonDown(0))
+        {
+            Debug.Log($"{gameObject.name} clicked");
+        }
     }
 
     void OnMouseExit()
