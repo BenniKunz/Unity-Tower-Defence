@@ -11,6 +11,7 @@ public class Pathfinder : MonoBehaviour
     Queue<Waypoint> queue = new Queue<Waypoint>();
 
     bool isRunning = true;
+    bool pathIsCalculated = false;
     Waypoint searchCenter;
     List<Waypoint> path = new List<Waypoint>();
 
@@ -25,11 +26,20 @@ public class Pathfinder : MonoBehaviour
 
     public List<Waypoint> GetPath()
     {
-        LoadBlocks();
-        ColorStartEnd();
-        BreadthFirstSearch();
-        CreatePath();
-        return path;
+        if(pathIsCalculated == false)
+        {
+            LoadBlocks();
+            ColorStartEnd();
+            BreadthFirstSearch();
+            CreatePath();
+            pathIsCalculated = true;
+            return path;
+        }
+        else
+        {
+            return path;
+        }
+        
     }
 
     private void CreatePath()

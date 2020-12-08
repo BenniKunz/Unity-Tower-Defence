@@ -14,7 +14,6 @@ public class EnemyCollision : MonoBehaviour
     {
        
     }
-
     
 
     private void OnParticleCollision(GameObject other)

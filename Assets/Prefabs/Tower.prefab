@@ -860,7 +860,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
   EmissionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 4
     rateOverTime:
       serializedVersion: 2
@@ -4859,6 +4859,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToPan: {fileID: 4841905954212623777}
   targetEnemy: {fileID: 0}
+  attackRange: 40
+  canon: {fileID: 118039301}
 --- !u!1001 &4845720979572185277
 PrefabInstance:
   m_ObjectHideFlags: 0
