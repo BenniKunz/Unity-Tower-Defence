@@ -21,7 +21,7 @@ public class Tower : MonoBehaviour
 
     private void SetTargetEnemy()
     {
-        EnemyCollision[]targetEnemyArray = FindObjectsOfType<EnemyCollision>();
+        EnemyCollision[] targetEnemyArray = FindObjectsOfType<EnemyCollision>();
         if(targetEnemyArray.Length == 0) { return;  }
         Transform closestEnemy = targetEnemyArray[0].transform;
 

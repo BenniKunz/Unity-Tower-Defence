@@ -69,7 +69,7 @@ public class Pathfinder : MonoBehaviour
     {
         if (searchCenter == endWaypoint)
         {
-            print("Attention! Start = End");
+            //print("Attention! Start = End");
             isRunning = false;
         }
     }

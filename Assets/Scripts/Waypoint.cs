@@ -1,14 +1,18 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Waypoint : MonoBehaviour
 {
-    const int gridSize = 10;
+
     public bool isExplored = false;
     public Waypoint exploredFrom;
     public bool isPlaceable = true;
 
+    [SerializeField] Tower towerPrefab;
+
+    const int gridSize = 10;
 
 
     // Start is called before the first frame update
@@ -22,6 +26,12 @@ public class Waypoint : MonoBehaviour
     void Update()
     {
 
+    }
+
+    private void SpawnTower()
+    {
+        Vector3 position = new Vector3(gameObject.transform.position.x, 5f, gameObject.transform.position.z);
+        Instantiate(towerPrefab, position, Quaternion.identity);
     }
 
     public Vector2Int CalcGridPos()
@@ -49,8 +59,8 @@ public class Waypoint : MonoBehaviour
         {
             if (isPlaceable == true)
             {
-
-                Debug.Log($"{gameObject.name} is placeable");
+                SpawnTower();
+                isPlaceable = false;
             }
             else
             {
