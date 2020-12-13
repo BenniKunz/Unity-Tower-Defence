@@ -876,6 +876,7 @@ GameObject:
   m_Component:
   - component: {fileID: 422690867}
   - component: {fileID: 422690868}
+  - component: {fileID: 422690869}
   m_Layer: 0
   m_Name: World
   m_TagString: Untagged
@@ -966,6 +967,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startWaypoint: {fileID: 94843781}
   endWaypoint: {fileID: 281202439}
+--- !u!114 &422690869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422690866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e518dd40ba30ac48b73db085470c2fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerLimit: 4
+  towerPrefab: {fileID: 4845720980671077792, guid: b17ddd4655803eb4ea46b3b3bf2c5b23, type: 3}
 --- !u!1001 &422762589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2087,8 +2102,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.43118998, y: 0.0016297646, z: 0.00020399077, w: 0.9022597}
-  m_LocalPosition: {x: -52.175194, y: 50.002785, z: -53.200756}
+  m_LocalRotation: {x: 0.3427148, y: 0.01153404, z: -0.002920862, w: 0.9393642}
+  m_LocalPosition: {x: -39.455246, y: 40.155167, z: -59.840256}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
