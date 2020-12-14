@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,26 +7,42 @@ public class TowerFactory : MonoBehaviour
 {
     [SerializeField] int towerLimit = 4;
     [SerializeField] Tower towerPrefab;
+    Queue<Tower> towers = new Queue<Tower>();
 
     // Start is called before the first frame update
     public void AddTower(Waypoint baseWaypoint)
     {
-        if (towerLimit > 0)
+        if (towers.Count < towerLimit)
         {
-            InstantiateNewTower(baseWaypoint);
-            towerLimit--;
+            InstantiateNewTower(baseWaypoint);  
         }
         else
         {
-
-            print("Tower limit reached");
+            MoveExistingTower(baseWaypoint);
         }
     }
-
     private void InstantiateNewTower(Waypoint baseWaypoint)
     {
         Vector3 position = new Vector3(baseWaypoint.transform.position.x, 5f, baseWaypoint.transform.position.z);
-        Instantiate(towerPrefab, position, Quaternion.identity);
+        Tower tower = Instantiate(towerPrefab, position, Quaternion.identity);
+
+        tower.baseTowerWaypoint = baseWaypoint;
+
         baseWaypoint.isPlaceable = false;
+
+        towers.Enqueue(tower);
     }
+
+    private void MoveExistingTower(Waypoint baseWaypoint)
+    {
+        
+        Tower tower = towers.Dequeue();
+        tower.baseTowerWaypoint.isPlaceable = true;
+        Vector3 position = new Vector3(baseWaypoint.transform.position.x, 5f, baseWaypoint.transform.position.z);
+        tower.transform.position = position;
+        baseWaypoint.isPlaceable = false;
+        towers.Enqueue(tower);
+
+    }
+
 }
