@@ -7,6 +7,7 @@ public class TowerFactory : MonoBehaviour
 {
     [SerializeField] int towerLimit = 4;
     [SerializeField] Tower towerPrefab;
+    [SerializeField] Transform parent;
     Queue<Tower> towers = new Queue<Tower>();
 
     // Start is called before the first frame update
@@ -25,6 +26,7 @@ public class TowerFactory : MonoBehaviour
     {
         Vector3 position = new Vector3(baseWaypoint.transform.position.x, 5f, baseWaypoint.transform.position.z);
         Tower tower = Instantiate(towerPrefab, position, Quaternion.identity);
+        tower.transform.parent = parent;
 
         tower.baseTowerWaypoint = baseWaypoint;
 

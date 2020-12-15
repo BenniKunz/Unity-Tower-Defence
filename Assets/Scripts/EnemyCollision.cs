@@ -10,6 +10,7 @@ public class EnemyCollision : MonoBehaviour
     [SerializeField] int hits = 100;
     [SerializeField] ParticleSystem hitFX;
     [SerializeField] ParticleSystem hitSmoke;
+    [SerializeField] Transform parent;
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +47,7 @@ public class EnemyCollision : MonoBehaviour
     private void StartDeathSequence()
     {
         GameObject fx = Instantiate(deathFX, transform.position, Quaternion.identity);
+        fx.transform.parent = parent;
         Destroy(fx, 1.5f);
         Destroy(this.gameObject);
     }

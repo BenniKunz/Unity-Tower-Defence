@@ -27,10 +27,17 @@ public class EnemyMovement : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, waypoint.transform.position, step);
         float distance = Vector3.Distance(transform.position, waypoint.transform.position);
 
-        if(distance < 0.001f)
+        if (distance < 0.001f)
         {
-            if(waypointPosition < path.Count -1)
-            waypointPosition++;
+            if (waypointPosition < path.Count - 1)
+            {
+                waypointPosition++;
+            }
         }
+        if (waypoint == path[path.Count - 1])
+        {
+            Destroy(gameObject, 1.5f);
+        }
+
     }
 }
