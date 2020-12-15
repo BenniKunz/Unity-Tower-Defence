@@ -41,6 +41,7 @@ public class TowerFactory : MonoBehaviour
         Vector3 position = new Vector3(baseWaypoint.transform.position.x, 5f, baseWaypoint.transform.position.z);
         tower.transform.position = position;
         baseWaypoint.isPlaceable = false;
+        tower.baseTowerWaypoint = baseWaypoint;
         towers.Enqueue(tower);
 
     }

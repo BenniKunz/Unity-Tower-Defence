@@ -46,8 +46,8 @@ public class EnemyCollision : MonoBehaviour
     private void StartDeathSequence()
     {
         GameObject fx = Instantiate(deathFX, transform.position, Quaternion.identity);
-        Destroy(this.gameObject);
         Destroy(fx, 1.5f);
+        Destroy(this.gameObject);
     }
 
     // Update is called once per frame
