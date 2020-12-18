@@ -73,6 +73,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 17.89
+  enemyGoal: {fileID: 8300000, guid: a65cb1a7d4445314a94ca507078c6b79, type: 3}
 --- !u!54 &931377034
 Rigidbody:
   m_ObjectHideFlags: 0

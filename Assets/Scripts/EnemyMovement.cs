@@ -7,6 +7,8 @@ public class EnemyMovement : MonoBehaviour
     public float speed = 1f;
     Waypoint waypoint;
     int waypointPosition = 0;
+    [SerializeField] AudioClip enemyGoal;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +38,7 @@ public class EnemyMovement : MonoBehaviour
         }
         if (waypoint == path[path.Count - 1])
         {
+            AudioSource.PlayClipAtPoint(enemyGoal, transform.position);
             Destroy(gameObject, 1.5f);
         }
 
