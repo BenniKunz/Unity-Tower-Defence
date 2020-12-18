@@ -11,6 +11,7 @@ public class EnemyCollision : MonoBehaviour
     [SerializeField] ParticleSystem hitFX;
     [SerializeField] ParticleSystem hitSmoke;
     [SerializeField] Transform parent;
+    [SerializeField] AudioClip enemyDeath;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +48,7 @@ public class EnemyCollision : MonoBehaviour
     private void StartDeathSequence()
     {
         GameObject fx = Instantiate(deathFX, transform.position, Quaternion.identity);
+        GetComponent<AudioSource>().PlayOneShot(enemyDeath);
         fx.transform.parent = parent;
         Destroy(fx, 1.5f);
         Destroy(this.gameObject);

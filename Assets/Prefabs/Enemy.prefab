@@ -105,6 +105,7 @@ MonoBehaviour:
   hitFX: {fileID: 408466842244561251}
   hitSmoke: {fileID: 2231995481811984341}
   parent: {fileID: 0}
+  enemyDeath: {fileID: 8300000, guid: a8c40de9b58733d4f916d2c52e93aa2f, type: 3}
 --- !u!1001 &334460932
 PrefabInstance:
   m_ObjectHideFlags: 0
